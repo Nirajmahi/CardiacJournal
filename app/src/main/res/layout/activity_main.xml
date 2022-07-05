@@ -179,8 +179,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <Button
+        android:id="@+id/historyy"
         android:layout_width="55dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
@@ -190,7 +190,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_history_24" />
+        android:background="@drawable/ic_baseline_history_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_record_btn"
