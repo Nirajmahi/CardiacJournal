@@ -1,6 +1,10 @@
 package com.example.cardiacjournal;
 
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+
+>>>>>>> 6b4447b545325b53d4aaf71c2069f60a54b1fe99
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
