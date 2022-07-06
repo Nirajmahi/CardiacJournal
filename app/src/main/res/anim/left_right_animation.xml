@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
 
-<<<<<<< HEAD
-<translate android:fromXDelta="-100%"
-    android:fromYDelta="0%" android:toYDelta="0%"
-    android:duration="1800"/>
-<alpha android:fromAlpha="0.0"
-    android:toAlpha="1.0"
-    android:duration="1500"/>
-=======
     <translate android:fromXDelta="-100%"
         android:fromYDelta="0%" android:toYDelta="0%"
         android:duration="1800"/>
     <alpha android:fromAlpha="0.0"
         android:toAlpha="1.0"
         android:duration="1500"/>
->>>>>>> 6b4447b545325b53d4aaf71c2069f60a54b1fe99
+
 
 </set>
