@@ -22,3 +22,8 @@
 
 Here only comment field may be left blank for a record.
 
+See the [Wiki](https://github.com/Nirajmahi/CardiacJournal/wiki) for documentation, implementation deatils, and history.
+
+![Untitled presentation](https://user-images.githubusercontent.com/72118969/177472396-b10566d7-7689-4ae5-b0a8-4836fde1b9c2.png)
+
+
