@@ -75,4 +75,11 @@ public class LogActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed( ){
+        Intent intent = new Intent(LogActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
+    }
 }

@@ -3,6 +3,7 @@ package com.example.cardiacjournal;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -102,6 +103,8 @@ public class Updatefragment extends android.app.DialogFragment {
             public void onClick(View view) {
                 MyDBHelper mydb = new MyDBHelper(thiscontext);
                 mydb.deleteOneRow(id);
+                Intent intent= new Intent(thiscontext,LogActivity.class);
+                startActivity(intent);
                 getDialog().dismiss();
             }
         });
@@ -163,6 +166,8 @@ public class Updatefragment extends android.app.DialogFragment {
                     MyDBHelper mydb = new MyDBHelper(thiscontext);
                     mydb.updatedata(id, syss, dias, bpmm, comm, datevalll, timevall);
                     //mOnInputListener.sendInput(sysval,diaval,com);
+                    Intent intentt= new Intent(thiscontext,LogActivity.class);
+                    startActivity(intentt);
                     getDialog().dismiss();
                 }
 
