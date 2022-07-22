@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="10dp">
+    android:elevation="10dp"
+    android:id="@+id/layoutmain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="407dp"
