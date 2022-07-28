@@ -34,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
     Handler mHandler;
     @SuppressLint("ResourceAsColor")
     @Override
+    /**
+     * this method is used to creat the homescreen
+     */
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mButton= findViewById(R.id.add_record_btn);
@@ -63,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
             dialogFragment.show(getFragmentManager(),"MyFragment");
     });
     his.setOnClickListener(new View.OnClickListener() {
+        /**
+         * This function is used for loading the history log.
+         * @param view
+         */
         @Override
         public void onClick(View view) {
             Intent ab= new Intent(MainActivity.this,LogActivity.class);
@@ -99,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 //com="Low Blood Pressure";
                 mCardView.setBackgroundResource(R.drawable.yellowbgsq);
             }
+
             sys.setText(String.valueOf(sys1.get(position - 1)));
             dia.setText(String.valueOf(dia1.get(position - 1)));
             date.setText(String.valueOf(date1.get(position - 1)));
@@ -106,10 +115,14 @@ public class MainActivity extends AppCompatActivity {
             bpm.setText(String.valueOf(bpm1.get(position - 1)));
             comment.setText(String.valueOf(comment1.get(position - 1)));
             mProgressBar.setProgress(Integer.parseInt(bpm1.get(position - 1)));
-        }
 
 
         mImageView.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is for going from mainActivity to logActivity.
+             * @param view
+             */
+
             @Override
             public void onClick(View view) {
                 Intent b= new Intent(MainActivity.this,LogActivity.class);
@@ -119,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     *  this method is  used for action if we store data in arrays
+     */
     public void storeDataInArrays(){
 
         Cursor cursor=myDB.readAllData();
@@ -145,9 +161,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * invoking insertdata method of mydatabasehelper class which is used to insert an entry into database
+     */
 
     @Override
     protected void onResume() {
+
         super.onResume();
         myDB=new MyDBHelper(MainActivity.this);
         log_id=new ArrayList<>();
@@ -165,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
             if ((sysval >= 90 && sysval < 140) && (diaval >= 60 && diaval <= 90)) {
                 mCardView.setBackgroundResource(R.drawable.greenbgsq);
 
+
             } else if ((sysval >= 140 && sysval < 180) || (diaval > 90 && diaval < 120)) {
                 // com="High Blood Pressure";
                 mCardView.setBackgroundResource(R.drawable.yellowbgsq);
@@ -178,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 //com="Low Blood Pressure";
                 mCardView.setBackgroundResource(R.drawable.yellowbgsq);
             }
+
             sys.setText(String.valueOf(sys1.get(position - 1)));
             dia.setText(String.valueOf(dia1.get(position - 1)));
             date.setText(String.valueOf(date1.get(position - 1)));
@@ -185,15 +207,9 @@ public class MainActivity extends AppCompatActivity {
             bpm.setText(String.valueOf(bpm1.get(position - 1)));
             comment.setText(String.valueOf(comment1.get(position - 1)));
             mProgressBar.setProgress(Integer.parseInt(bpm1.get(position - 1)));
-
         }
 
-
-
-
-
-
-    }
+        }
 
     private final Runnable mRunnable=new Runnable() {
         @Override

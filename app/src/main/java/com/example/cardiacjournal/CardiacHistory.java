@@ -3,6 +3,9 @@ package com.example.cardiacjournal;
 import java.util.Date;
 
 public class CardiacHistory {
+    /**
+     * this class is for setdata
+     */
 
      Date mDate;
 

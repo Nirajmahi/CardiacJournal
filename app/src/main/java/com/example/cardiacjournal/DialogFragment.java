@@ -42,6 +42,14 @@ public class DialogFragment extends android.app.DialogFragment {
     EditText sysInput,diaInput,bpmInput,commentInput,Date,Time;
     Button mmButton;
     TextView comIn;
+
+    /**
+     * this create a fragment to add input data
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
@@ -72,7 +80,9 @@ public class DialogFragment extends android.app.DialogFragment {
         bundle.putInt("bpmval",bpmInput.getInputType());
         bundle.putString("commentval",commentInput.getText().toString());
 
-
+        /**
+         * this for showing the date dialog
+         */
         Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +92,9 @@ public class DialogFragment extends android.app.DialogFragment {
 
         });
 
+        /**
+         * this is for showing the time picker
+         */
         Time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +106,10 @@ public class DialogFragment extends android.app.DialogFragment {
 
 
         mmButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * this is for insert the data into the database
+             * @param view
+             */
             @Override
             public void onClick(View view) {
 
@@ -162,6 +179,10 @@ public class DialogFragment extends android.app.DialogFragment {
         return v;
     }
 
+    /**
+     * this is for time dialog
+     * @param time
+     */
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void showTimeDialog(EditText time) {
         Calendar calendar= Calendar.getInstance();
@@ -177,7 +198,10 @@ public class DialogFragment extends android.app.DialogFragment {
         new TimePickerDialog(thiscontext,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
     }
 
-
+    /**
+     * this is for date dialog
+     * @param date
+     */
     private void showDateDialog(EditText date) {
         Calendar calendar=Calendar.getInstance();
         DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {

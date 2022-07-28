@@ -42,8 +42,16 @@ public class Updatefragment extends android.app.DialogFragment {
     Button mButton, dButton;
     TextView comIn;
 
+    /**
+     * this is for  showing user what inputs have been already stored
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -80,7 +88,9 @@ public class Updatefragment extends android.app.DialogFragment {
         Date.setText(dateval);
         Time.setText(timeval);
 
-
+        /**
+         * this function shows the datepicker to select the date
+         */
         Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +99,9 @@ public class Updatefragment extends android.app.DialogFragment {
 
 
         });
+        /**
+         * this function shows timepicker to select the time
+         */
 
         Time.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,8 +116,9 @@ public class Updatefragment extends android.app.DialogFragment {
             public void onClick(View view) {
                 MyDBHelper mydb = new MyDBHelper(thiscontext);
                 mydb.deleteOneRow(id);
-                Intent aa= new Intent(thiscontext,LogActivity.class);
-                startActivity(aa);
+
+
+
                 getDialog().dismiss();
             }
         });
@@ -164,10 +178,12 @@ public class Updatefragment extends android.app.DialogFragment {
                     String datevalll = Date.getText().toString().trim();
                     String timevalll = Time.getText().toString();
                     MyDBHelper mydb = new MyDBHelper(thiscontext);
+                    /**
+                     * this is to update the log
+                     */
                     mydb.updatedata(id, syss, dias, bpmm, comm, datevalll, timevall);
                     //mOnInputListener.sendInput(sysval,diaval,com);
-                    Intent aaa= new Intent(thiscontext,LogActivity.class);
-                    startActivity(aaa);
+
                     getDialog().dismiss();
                 }
 
@@ -180,6 +196,9 @@ public class Updatefragment extends android.app.DialogFragment {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void showTimeDialog(EditText time) {
+        /**
+         * this function is for showing  time dialog
+         */
         Calendar calendar = Calendar.getInstance();
         TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -195,6 +214,9 @@ public class Updatefragment extends android.app.DialogFragment {
 
 
     private void showDateDialog(EditText date) {
+        /**
+         * this is for  showing the date dialog
+         */
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override

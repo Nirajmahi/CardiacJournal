@@ -49,7 +49,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
       db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
     }
 
-    public long addRecord(int sys,int dia,int bpm , String date ,String time , String comment){
+
 
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -74,6 +74,11 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * read all rows from table
+     * @return
+     */
+
  Cursor readAllData(){
         String query = "SELECT * FROM "+TABLE_NAME;
         SQLiteDatabase db=this.getReadableDatabase();
@@ -84,6 +89,16 @@ public class MyDBHelper extends SQLiteOpenHelper {
         return cursor;
  }
 
+    /**
+     * update a single row of information  based on the id
+     * @param row_id
+     * @param sys
+     * @param dia
+     * @param bpm
+     * @param comment
+     * @param date
+     * @param time
+     */
  void updatedata(String row_id,String sys, String dia, String bpm, String comment, String date, String time)
  {SQLiteDatabase db=this.getWritableDatabase();
     ContentValues cv= new ContentValues();
@@ -104,6 +119,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
  }
 
 
+
  void deleteOneRow(String row_id){
         SQLiteDatabase db=this.getWritableDatabase();
         long result=db.delete(TABLE_NAME,"id=?", new String[]{row_id});
@@ -115,44 +131,6 @@ public class MyDBHelper extends SQLiteOpenHelper {
      }
     }
 
-    public boolean checkDataExistsOrNot(Long id) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        String Query = "Select * from " + TABLE_NAME + " where " + id + " = " + Long.toString(id);
-        Cursor cursor = sqLiteDatabase.rawQuery(Query, null);
-        if (cursor.getCount() <= 0) {
-            cursor.close();
-            return false;
-        }
-        cursor.close();
-        return true;
-    }
 
-    public boolean checkContent( String sys, String dias, String pulse, String date, String time, String comments) {
-        SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();
-        String[] columns = {MyDBHelper.COLUMN_SYS, MyDBHelper.COLUMN_DIA, MyDBHelper.COLUMN_BPM, MyDBHelper.COLUMN_DATE, MyDBHelper.COLUMN_TIME, MyDBHelper.COLUMN_COMMENT};
-        Cursor cursor = sqLiteDatabase.query(MyDBHelper.TABLE_NAME, columns, MyDBHelper.COLUMN_ID+" = '"+"id"+"'", null, null, null, null);
-        while (cursor.moveToNext()) {
-            String i1 = String.valueOf(cursor.getColumnIndex(MyDBHelper.COLUMN_SYS));
-            String i2 = String.valueOf(cursor.getColumnIndex(MyDBHelper.COLUMN_DIA));
-            String i3 = String.valueOf(cursor.getColumnIndex(MyDBHelper.COLUMN_BPM));
-            String i4 = String.valueOf(cursor.getColumnIndex(MyDBHelper.COLUMN_DATE));
-            String i5 = String.valueOf(cursor.getColumnIndex(MyDBHelper.COLUMN_TIME));
-            String i6 = String.valueOf(cursor.getColumnIndex(MyDBHelper.COLUMN_COMMENT));
-
-            String sys1 = cursor.getString(Integer.parseInt(i1));
-            String dia1 = cursor.getString(Integer.parseInt(i2));
-            String pulse1 = cursor.getString(Integer.parseInt(i3));
-            String date1 = cursor.getString(Integer.parseInt(i4));
-            String time1 = cursor.getString(Integer.parseInt(i5));
-            String comm1 = cursor.getString(Integer.parseInt(i6));
-
-            if (sys != sys1 || dias != dia1  || pulse != pulse1  || date != date1 || time1 != time || comments != comm1) {
-                cursor.close();
-                return false;
-            }
-        }
-        cursor.close();
-        return true;
-    }
 
 }

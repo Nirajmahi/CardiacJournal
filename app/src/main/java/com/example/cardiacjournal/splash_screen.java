@@ -12,10 +12,16 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class splash_screen extends AppCompatActivity {
-        Animation leftanim,rightanim;
+
+    Animation leftanim,rightanim;
         ImageView logo,logotext;
         private static int SPLASH_SCREEN = 3500;
-        @Override
+
+    /**
+     * this is for the creation of splash screen
+     * @param savedInstanceState
+     */
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);

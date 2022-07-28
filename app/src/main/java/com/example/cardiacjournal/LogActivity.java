@@ -13,6 +13,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * this class mainly implements the ui of historyactivity
+ * this class also work as an interface between database and history page
+ */
+
 public class LogActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ArrayList<CardiacHistory>loglist;
@@ -20,6 +25,11 @@ public class LogActivity extends AppCompatActivity {
     CardiacHistoryAdapter mAdapter;
     ArrayList<String> log_id,sys,dia,bpm,date,time,comment;
     Button back;
+
+    /**
+     * this is to create the log activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +51,9 @@ public class LogActivity extends AppCompatActivity {
     }
 
     public void storeDataInArrays(){
+        /**
+         * this  method is  used for action if we store data in arrays
+         */
 
         Cursor cursor=myDB.readAllData();
 
@@ -67,6 +80,10 @@ public class LogActivity extends AppCompatActivity {
 
         back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
+            /**
+             * this is for going back to main Activity after updation or deletion
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 Intent a= new Intent(LogActivity.this,MainActivity.class);
@@ -76,8 +93,6 @@ public class LogActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed( ){
         Intent intent = new Intent(LogActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
