@@ -2,12 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="390dp"
     android:layout_height="wrap_content"
-    android:elevation="10dp">
+
+    android:elevation="10dp"
+    android:id="@+id/layoutmain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="407dp"
+        android:layout_width="370dp"
         android:layout_height="242dp"
         android:layout_marginLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,16 +20,15 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="398dp"
+            android:layout_width="365dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
-            android:elevation="10dp"
-            app:cardCornerRadius="20dp"
+
             app:cardElevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
 
                 <TextView
                     android:id="@+id/date"
-                    android:layout_width="379dp"
+                    android:layout_width="350dp"
                     android:layout_height="32dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -161,45 +162,14 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center|center_horizontal|center_vertical"
-                        android:orientation="vertical">
 
-                        <ImageButton
-                            android:id="@+id/edit_button"
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_gravity="center"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="1"
-                            android:background="#FFFFFF"
-                            android:minHeight="48dp"
-
-                            app:srcCompat="@drawable/ic_baseline_edit_24"
-                            tools:ignore="SpeakableTextPresentCheck" />
-
-                        <ImageButton
-                            android:id="@+id/delete_button"
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginBottom="20dp"
-                            android:layout_weight="1"
-                            android:background="#FFFFFF"
-                            android:contentDescription="@string/app_name"
-                            app:srcCompat="@drawable/ic_baseline_delete_24" />
-                    </LinearLayout>
 
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/comment_m"
-                    android:layout_width="381dp"
+                    android:layout_width="345dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:hint="comment"
