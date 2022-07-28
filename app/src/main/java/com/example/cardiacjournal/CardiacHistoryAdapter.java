@@ -56,13 +56,21 @@ public class CardiacHistoryAdapter extends RecyclerView.Adapter<CardiacHistoryAd
 
     @NonNull
     @Override
+    /**
+     * this is for the card view of the recycler
+     */
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.show_log,parent,false);
         return new viewHolder(view);
     }
 
     @Override
+    /**
+     * this is for holding the data in the card of the recyclerview
+     */
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+
+
 
 
         holder.mdate.setText(String.valueOf(date.get(position))+" "+String.valueOf(time.get(position)));
@@ -96,6 +104,10 @@ public class CardiacHistoryAdapter extends RecyclerView.Adapter<CardiacHistoryAd
         }
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            /**
+             * if the card is pressed then a fragment will be come for update
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 AppCompatActivity appCompatActivity=(AppCompatActivity)view.getContext();
@@ -133,7 +145,6 @@ public class CardiacHistoryAdapter extends RecyclerView.Adapter<CardiacHistoryAd
         ConstraintLayout mainLayout;
 
         public viewHolder(@NonNull View itemView) {
-
             super(itemView);
             mdate= itemView.findViewById(R.id.date);
             msys= itemView.findViewById(R.id.sys_m);
