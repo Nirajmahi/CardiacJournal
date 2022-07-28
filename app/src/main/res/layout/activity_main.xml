@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homepage"
+    android:background="@drawable/homebackground"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="89dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/tranparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -161,23 +162,27 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="408dp"
+        android:layout_width="365dp"
+        app:layout_goneMarginLeft="15dp"
         android:layout_height="95dp"
         android:layout_marginTop="12dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar"
-        app:layout_constraintVertical_bias="0.177">
+        app:layout_constraintVertical_bias="0.245">
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="27dp"
             android:layout_marginTop="32dp"
+            android:layout_marginLeft="10dp"
             android:text="Last Recorded On:"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -191,7 +196,7 @@
             android:id="@+id/dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
+            android:layout_marginLeft="195dp"
             android:layout_marginTop="30dp"
             android:text="TextView"
             android:textSize="20sp"

@@ -76,36 +76,34 @@ public class MainActivity extends AppCompatActivity {
 
 
         int position = log_id.size();
-        int sysval=Integer.parseInt(sys1.get(position-1));
-        int diaval=Integer.parseInt(dia1.get(position-1));
-        if((sysval>=90 && sysval<140) && (diaval>=60 && diaval<=90 )){
-            mCardView.setBackgroundResource(R.drawable.greenbgsq);
+        if(position>0) {
+            int sysval = Integer.parseInt(sys1.get(position - 1));
+            int diaval = Integer.parseInt(dia1.get(position - 1));
+            if ((sysval >= 90 && sysval < 140) && (diaval >= 60 && diaval <= 90)) {
+                mCardView.setBackgroundResource(R.drawable.greenbgsq);
 
-        }
-        else if((sysval>=140 && sysval<180) || (diaval>90 && diaval<120 )){
-            // com="High Blood Pressure";
-            mCardView.setBackgroundResource(R.drawable.yellowbgsq);
+            } else if ((sysval >= 140 && sysval < 180) || (diaval > 90 && diaval < 120)) {
+                // com="High Blood Pressure";
+                mCardView.setBackgroundResource(R.drawable.yellowbgsq);
 
-        }
-        else if(sysval>=180 || diaval>=120 ){
-            //com="Hypertensive Crisis,Consult Doctor";
-            mCardView.setBackgroundResource(R.drawable.redbgsq);
-            sys.setTextColor(getResources().getColor(R.color.white));
-            sys.setTextColor(getResources().getColor(R.color.white));
+            } else if (sysval >= 180 || diaval >= 120) {
+                //com="Hypertensive Crisis,Consult Doctor";
+                mCardView.setBackgroundResource(R.drawable.redbgsq);
+                sys.setTextColor(getResources().getColor(R.color.white));
+                sys.setTextColor(getResources().getColor(R.color.white));
 
+            } else if (sysval < 90 || diaval < 60) {
+                //com="Low Blood Pressure";
+                mCardView.setBackgroundResource(R.drawable.yellowbgsq);
+            }
+            sys.setText(String.valueOf(sys1.get(position - 1)));
+            dia.setText(String.valueOf(dia1.get(position - 1)));
+            date.setText(String.valueOf(date1.get(position - 1)));
+            time.setText(String.valueOf(time1.get(position - 1)));
+            bpm.setText(String.valueOf(bpm1.get(position - 1)));
+            comment.setText(String.valueOf(comment1.get(position - 1)));
+            mProgressBar.setProgress(Integer.parseInt(bpm1.get(position - 1)));
         }
-        else if(sysval<90 || diaval<60){
-            //com="Low Blood Pressure";
-            mCardView.setBackgroundResource(R.drawable.yellowbgsq);
-        }
-        sys.setText(String.valueOf(sys1.get(position-1)));
-        dia.setText(String.valueOf(dia1.get(position-1)));
-        date.setText(String.valueOf(date1.get(position-1)));
-        time.setText(String.valueOf(time1.get(position-1)));
-        bpm.setText(String.valueOf(bpm1.get(position-1)));
-        comment.setText(String.valueOf(comment1.get(position-1)));
-        mProgressBar.setProgress(Integer.parseInt(bpm1.get(position-1)));
-
 
 
         mImageView.setOnClickListener(new View.OnClickListener() {
@@ -158,36 +156,34 @@ public class MainActivity extends AppCompatActivity {
         comment1=new ArrayList<>();
         storeDataInArrays();
         int position = log_id.size();
-        int sysval=Integer.parseInt(sys1.get(position-1));
-        int diaval=Integer.parseInt(dia1.get(position-1));
-        if((sysval>=90 && sysval<140) && (diaval>=60 && diaval<=90 )){
-            mCardView.setBackgroundResource(R.drawable.greenbgsq);
+        if(position>0) {
+            int sysval = Integer.parseInt(sys1.get(position - 1));
+            int diaval = Integer.parseInt(dia1.get(position - 1));
+            if ((sysval >= 90 && sysval < 140) && (diaval >= 60 && diaval <= 90)) {
+                mCardView.setBackgroundResource(R.drawable.greenbgsq);
+
+            } else if ((sysval >= 140 && sysval < 180) || (diaval > 90 && diaval < 120)) {
+                // com="High Blood Pressure";
+                mCardView.setBackgroundResource(R.drawable.yellowbgsq);
+
+            } else if (sysval >= 180 || diaval >= 120) {
+                //com="Hypertensive Crisis,Consult Doctor";
+                mCardView.setBackgroundResource(R.drawable.redbgsq);
+
+
+            } else if (sysval < 90 || diaval < 60) {
+                //com="Low Blood Pressure";
+                mCardView.setBackgroundResource(R.drawable.yellowbgsq);
+            }
+            sys.setText(String.valueOf(sys1.get(position - 1)));
+            dia.setText(String.valueOf(dia1.get(position - 1)));
+            date.setText(String.valueOf(date1.get(position - 1)));
+            time.setText(String.valueOf(time1.get(position - 1)));
+            bpm.setText(String.valueOf(bpm1.get(position - 1)));
+            comment.setText(String.valueOf(comment1.get(position - 1)));
+            mProgressBar.setProgress(Integer.parseInt(bpm1.get(position - 1)));
 
         }
-        else if((sysval>=140 && sysval<180) || (diaval>90 && diaval<120 )){
-            // com="High Blood Pressure";
-            mCardView.setBackgroundResource(R.drawable.yellowbgsq);
-
-        }
-        else if(sysval>=180 || diaval>=120 ){
-            //com="Hypertensive Crisis,Consult Doctor";
-            mCardView.setBackgroundResource(R.drawable.redbgsq);
-
-
-        }
-        else if(sysval<90 || diaval<60){
-            //com="Low Blood Pressure";
-            mCardView.setBackgroundResource(R.drawable.yellowbgsq);
-        }
-        sys.setText(String.valueOf(sys1.get(position-1)));
-        dia.setText(String.valueOf(dia1.get(position-1)));
-        date.setText(String.valueOf(date1.get(position-1)));
-        time.setText(String.valueOf(time1.get(position-1)));
-        bpm.setText(String.valueOf(bpm1.get(position-1)));
-        comment.setText(String.valueOf(comment1.get(position-1)));
-        mProgressBar.setProgress(Integer.parseInt(bpm1.get(position-1)));
-
-
 
 
 
