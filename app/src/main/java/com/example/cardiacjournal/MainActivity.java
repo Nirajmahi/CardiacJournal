@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar mProgressBar;
     CardView mCardView;
     MyDBHelper myDB ;
+    ConstraintLayout a;
     ArrayList<String> log_id,sys1,dia1,bpm1,date1,time1,comment1;
     Handler mHandler;
     @SuppressLint("ResourceAsColor")
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         bpm=findViewById(R.id.text_view_progress);
         his=findViewById(R.id.history);
         mImageView=findViewById(R.id.imageView4);
+        a=findViewById(R.id.mainn);
         myDB=new MyDBHelper(MainActivity.this);
         log_id=new ArrayList<>();
         sys1= new ArrayList<>();
