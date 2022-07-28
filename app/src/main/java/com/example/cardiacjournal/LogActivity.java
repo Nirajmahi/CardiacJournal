@@ -92,11 +92,7 @@ public class LogActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void onBackPressed( ){
-        /**
-         * this is for going back to main Activity
-         */
+
         Intent intent = new Intent(LogActivity.this,MainActivity.class);
         startActivity(intent);
         finish();

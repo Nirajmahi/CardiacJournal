@@ -34,13 +34,14 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="59dp"
-            android:background="#B10841"
+            android:background="@color/tranparent"
             android:paddingTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="Update This Record"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#005fd7"
             android:textColorHighlight="#CF074B"
-            android:textSize="24sp"
+            android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -129,24 +130,28 @@
         <Button
             android:id="@+id/update_btn"
             android:layout_width="242dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_marginTop="36dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="5dp"
             android:text="Update"
             android:textColor="#FFFFFF"
+            android:textSize="20dp"
             android:textColorHint="#FFFFFF"
-            app:backgroundTint="#616060" />
+            android:background="#005fd7"
+             />
 
         <Button
             android:id="@+id/deletee_btn"
             android:layout_width="242dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="50dp"
             android:text="Delete"
+            android:textSize="20dp"
+           android:background="#005fd7"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            app:backgroundTint="#616060" />
+             />
 
     </LinearLayout>
 

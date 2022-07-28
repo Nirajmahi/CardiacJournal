@@ -33,9 +33,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        /**
-         * table creation to store user information
-         */
+
         String query = "CREATE TABLE " + TABLE_NAME + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_SYS + " INTEGER, " +
                 COLUMN_DIA + " INTEGER, " +
@@ -51,17 +49,6 @@ public class MyDBHelper extends SQLiteOpenHelper {
       db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
     }
 
-    /**
-     * adds a sigle row of information in table
-     * @param sys
-     * @param dia
-     * @param bpm
-     * @param date
-     * @param time
-     * @param comment
-     */
-
-    public void addRecord(int sys,int dia,int bpm , String date ,String time , String comment){
 
 
         SQLiteDatabase db =this.getWritableDatabase();
@@ -82,8 +69,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
             Toast.makeText(context,"Added Successfully",Toast.LENGTH_SHORT).show();
         }
 
-
-
+    return result;
 
 
     }
@@ -132,10 +118,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
      }
  }
 
-    /**
-     * delete a single row based on id
-     * @param row_id
-     */
+
 
  void deleteOneRow(String row_id){
         SQLiteDatabase db=this.getWritableDatabase();
@@ -147,6 +130,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
          Toast.makeText(context,"Deleted Successfully",Toast.LENGTH_SHORT).show();
      }
     }
+
 
 
 }

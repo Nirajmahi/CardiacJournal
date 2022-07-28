@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.Fragment;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -162,10 +163,13 @@ public class DialogFragment extends android.app.DialogFragment {
                         com=commentInput.getText().toString();
                     }
                     MyDBHelper mydb = new MyDBHelper(thiscontext);
-                    mydb.addRecord(sysval,diaval,bpmval,dateval,timeval,com);
+                   long result= mydb.addRecord(sysval,diaval,bpmval,dateval,timeval,com);
 
                     //mOnInputListener.sendInput(sysval,diaval,com);
+                    Intent i = new Intent(thiscontext,MainActivity.class);
+                    startActivity(i);
                     getDialog().dismiss();
+
                 }
 
 

@@ -2,17 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homepage"
-    tools:context=".MainActivity"
-    android:id="@+id/main_activity">
 
     <Button
         android:id="@+id/history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="89dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/tranparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +47,7 @@
         android:layout_height="wrap_content"
         android:text="Comment"
         android:textSize="24sp"
+        android:layout_marginLeft="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/progress_bar"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
@@ -84,7 +84,7 @@
         app:layout_constraintStart_toStartOf="@+id/progress_bar"
         app:layout_constraintTop_toTopOf="@+id/progress_bar"
         app:layout_constraintVertical_bias="1.0"
-        tools:text="80" />
+        tools:text=" " />
 
     <TextView
         android:id="@+id/textView"
@@ -120,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
-        android:text="129"
+        android:text="  "
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/diaText"
         app:layout_constraintStart_toStartOf="@+id/progress_bar"
@@ -143,7 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="160dp"
-        android:text="80"
+        android:text="   "
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/text_view_progress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -162,23 +162,27 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="408dp"
+        android:layout_width="365dp"
+        app:layout_goneMarginLeft="15dp"
         android:layout_height="95dp"
         android:layout_marginTop="12dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar"
-        app:layout_constraintVertical_bias="0.177">
+        app:layout_constraintVertical_bias="0.245">
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="27dp"
             android:layout_marginTop="32dp"
+            android:layout_marginLeft="10dp"
             android:text="Last Recorded On:"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -192,9 +196,9 @@
             android:id="@+id/dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
+            android:layout_marginLeft="199dp"
             android:layout_marginTop="30dp"
-            android:text="TextView"
+            android:text="DATE"
             android:textSize="20sp"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -202,9 +206,9 @@
             android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="290dp"
+            android:layout_marginLeft="292dp"
             android:layout_marginTop="30dp"
-            android:text="TextView"
+            android:text="Time"
             android:textSize="20sp"
             app:layout_constraintVertical_bias="0.0" />
     </androidx.cardview.widget.CardView>

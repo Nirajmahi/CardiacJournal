@@ -116,8 +116,9 @@ public class Updatefragment extends android.app.DialogFragment {
             public void onClick(View view) {
                 MyDBHelper mydb = new MyDBHelper(thiscontext);
                 mydb.deleteOneRow(id);
-                Intent intent= new Intent(thiscontext,LogActivity.class);
-                startActivity(intent);
+
+
+
                 getDialog().dismiss();
             }
         });
@@ -182,8 +183,7 @@ public class Updatefragment extends android.app.DialogFragment {
                      */
                     mydb.updatedata(id, syss, dias, bpmm, comm, datevalll, timevall);
                     //mOnInputListener.sendInput(sysval,diaval,com);
-                    Intent intentt= new Intent(thiscontext,LogActivity.class);
-                    startActivity(intentt);
+
                     getDialog().dismiss();
                 }
 

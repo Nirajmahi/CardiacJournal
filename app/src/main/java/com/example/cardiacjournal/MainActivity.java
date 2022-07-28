@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar mProgressBar;
     CardView mCardView;
     MyDBHelper myDB ;
+    ConstraintLayout a;
     ArrayList<String> log_id,sys1,dia1,bpm1,date1,time1,comment1;
     Handler mHandler;
     @SuppressLint("ResourceAsColor")
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         bpm=findViewById(R.id.text_view_progress);
         his=findViewById(R.id.history);
         mImageView=findViewById(R.id.imageView4);
+        a=findViewById(R.id.mainn);
         myDB=new MyDBHelper(MainActivity.this);
         log_id=new ArrayList<>();
         sys1= new ArrayList<>();
@@ -104,9 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 //com="Low Blood Pressure";
                 mCardView.setBackgroundResource(R.drawable.yellowbgsq);
             }
-            /**
-             * set method used for action if we click on add button
-             */
+
             sys.setText(String.valueOf(sys1.get(position - 1)));
             dia.setText(String.valueOf(dia1.get(position - 1)));
             date.setText(String.valueOf(date1.get(position - 1)));
@@ -115,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
             comment.setText(String.valueOf(comment1.get(position - 1)));
             mProgressBar.setProgress(Integer.parseInt(bpm1.get(position - 1)));
 
-        }
 
         mImageView.setOnClickListener(new View.OnClickListener() {
             /**
@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
             int diaval = Integer.parseInt(dia1.get(position - 1));
             if ((sysval >= 90 && sysval < 140) && (diaval >= 60 && diaval <= 90)) {
                 mCardView.setBackgroundResource(R.drawable.greenbgsq);
+
 
             } else if ((sysval >= 140 && sysval < 180) || (diaval > 90 && diaval < 120)) {
                 // com="High Blood Pressure";
